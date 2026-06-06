@@ -353,6 +353,25 @@ color:#c084fc;
 .l4{top:40%;left:48%}
 .l5{top:60%;left:68%}
 .l6{top:14%;left:82%}
+ 
+ .cursor-rune{
+ position:fixed;
+ pointer-events:none;
+ z-index:9999;
+ font-size:28px;
+ color:#c084fc;
+ text-shadow:
+ 0 0 8px #c084fc,
+ 0 0 20px #9333ea,
+ 0 0 40px #6d28d9;
+ transform:translate(-50%,-50%);
+ animation:spin 8s linear infinite;
+}
+
+@keyframes spin{
+ from{rotate:0deg;}
+ to{rotate:360deg;}
+}
 </style>
 
 </head>
@@ -361,8 +380,7 @@ color:#c084fc;
 
 <div class="stars"></div>
 <div class="blur" id="blur"></div>
-<div class="cursor"></div>
-<div class="cursor2"></div>
+<div class="cursor-rune">✦</div>
 
 <nav>
 <div><b>EldoriaMC</b></div>
