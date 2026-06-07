@@ -348,8 +348,6 @@ color:#c084fc;
  from{rotate:0deg;}
  to{rotate:360deg;}
 }
-
-<div class="cursor-rune">✧</div>
  
 </style>
 
@@ -653,67 +651,49 @@ Od tamtej chwili setki śmiałków próbowały odkryć prawdę.
 <script>
 
 const cursor = document.querySelector(".cursor-rune");
+const blur = document.getElementById("blur");
 
-document.addEventListener("mousemove",e=>{
+document.addEventListener("mousemove", (e) => {
 
- cursor.style.left = e.clientX + "px";
- cursor.style.top = e.clientY + "px";
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
 
- document.getElementById("blur").style.left =
- (e.clientX - 250) + "px";
-
- document.getElementById("blur").style.top =
- (e.clientY - 250) + "px";
+    blur.style.left = (e.clientX - 250) + "px";
+    blur.style.top = (e.clientY - 250) + "px";
 
 });
 
-  document.getElementById("blur").style.left =
-  (e.clientX-250)+"px";
+document.querySelectorAll(".card").forEach(card => {
 
-  document.getElementById("blur").style.top =
-  (e.clientY-250)+"px";
+    card.addEventListener("mousemove", e => {
 
-});
+        const r = card.getBoundingClientRect();
 
-document.getElementById("blur").style.left=
-(e.clientX-250)+"px";
+        card.style.setProperty("--x",
+            (e.clientX - r.left) + "px");
 
-document.getElementById("blur").style.top=
-(e.clientY-250)+"px";
+        card.style.setProperty("--y",
+            (e.clientY - r.top) + "px");
 
-});
-
-document.querySelectorAll(".card").forEach(card=>{
-
-card.addEventListener("mousemove",e=>{
-
-const r=card.getBoundingClientRect();
-
-card.style.setProperty("--x",
-(e.clientX-r.left)+"px");
-
-card.style.setProperty("--y",
-(e.clientY-r.top)+"px");
-
-});
+    });
 
 });
 
 const target = new Date("2026-12-01T18:00:00");
 
-setInterval(()=>{
+setInterval(() => {
 
-let d = target - new Date();
+    let d = target - new Date();
 
-let days = Math.max(
-0,
-Math.floor(d/86400000)
-);
+    let days = Math.max(
+        0,
+        Math.floor(d / 86400000)
+    );
 
-document.getElementById("count").textContent =
-"Start sezonu za " + days + " dni";
+    document.getElementById("count").textContent =
+        "Start sezonu za " + days + " dni";
 
-},1000);
+}, 1000);
 
 </script>
 
