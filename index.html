@@ -647,18 +647,6 @@ Od tamtej chwili setki śmiałków próbowały odkryć prawdę.
 
 <script>
 
-const cursor = document.querySelector(".cursor-rune");
-const blur = document.getElementById("blur");
-
-document.addEventListener("mousemove", (e) => {
-
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
-
-    blur.style.left = (e.clientX - 250) + "px";
-    blur.style.top = (e.clientY - 250) + "px";
-
-});
 
 document.querySelectorAll(".card").forEach(card => {
 
