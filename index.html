@@ -330,18 +330,13 @@ color:#c084fc;
 .l5{top:60%;left:68%}
 .l6{top:14%;left:82%}
  
- .cursor-rune{
- position:fixed;
- pointer-events:none;
- z-index:9999;
- font-size:28px;
- color:#c084fc;
- text-shadow:
- 0 0 8px #c084fc,
- 0 0 20px #9333ea,
- 0 0 40px #6d28d9;
- transform:translate(-50%,-50%);
- animation:spin 8s linear infinite;
+.cursor-rune{
+    position:fixed;
+    left:100px;
+    top:100px;
+    z-index:999999;
+    font-size:50px;
+    color:red;
 }
 
 @keyframes spin{
@@ -357,9 +352,7 @@ color:#c084fc;
 
 <div class="stars"></div>
 <div class="blur" id="blur"></div>
-<div class="cursor-rune">
-    ✧
-</div>
+ 
 <nav>
 <div><b>EldoriaMC</b></div>
 <div>
