@@ -380,8 +380,9 @@ color:#c084fc;
 
 <div class="stars"></div>
 <div class="blur" id="blur"></div>
-<div class="cursor-rune">✦</div>
-
+<div class="cursor-rune">
+    ✧
+</div>
 <nav>
 <div><b>EldoriaMC</b></div>
 <div>
@@ -674,11 +675,20 @@ Od tamtej chwili setki śmiałków próbowały odkryć prawdę.
 
 document.addEventListener("mousemove",e=>{
 
-document.querySelector(".cursor").style.transform=
-`translate(${e.clientX}px,${e.clientY}px)`;
+const cursor = document.querySelector(".cursor-rune");
 
-document.querySelector(".cursor2").style.transform=
-`translate(${e.clientX}px,${e.clientY}px)`;
+document.addEventListener("mousemove",e=>{
+
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+
+  document.getElementById("blur").style.left =
+  (e.clientX-250)+"px";
+
+  document.getElementById("blur").style.top =
+  (e.clientY-250)+"px";
+
+});
 
 document.getElementById("blur").style.left=
 (e.clientX-250)+"px";
