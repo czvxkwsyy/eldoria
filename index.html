@@ -673,14 +673,20 @@ Od tamtej chwili setki śmiałków próbowały odkryć prawdę.
 
 <script>
 
-document.addEventListener("mousemove",e=>{
-
 const cursor = document.querySelector(".cursor-rune");
 
 document.addEventListener("mousemove",e=>{
 
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+ cursor.style.left = e.clientX + "px";
+ cursor.style.top = e.clientY + "px";
+
+ document.getElementById("blur").style.left =
+ (e.clientX - 250) + "px";
+
+ document.getElementById("blur").style.top =
+ (e.clientY - 250) + "px";
+
+});
 
   document.getElementById("blur").style.left =
   (e.clientX-250)+"px";
